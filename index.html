@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hospital Management System</title>
+    <!-- daisyui and talwind css integration -->
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@3.5.0/dist/full.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- google font integration -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <style>
+        .font-noto {
+            font-family: 'Noto Sans', sans-serif;
+        }
+    </style>
+</head>
+
+<body class="font-noto bg-white container mx-auto m-0">
+    <header>
+        <nav>
+            <div class="navbar text-black">
+                <div class="navbar-start">
+                    <div class="dropdown">
+                        <label tabindex="0" class="btn btn-ghost lg:hidden">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
+                                stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M4 6h16M4 12h8m-8 6h16" />
+                            </svg>
+                        </label>
+                        <ul tabindex="0"
+                            class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-slate-50 rounded-box w-52">
+                            <li><a>Doctor Scheduling</a></li>
+                            <li><a>Appointment Bookings</a></li>
+                            <li><a>Billing & Invoice</a></li>
+                        </ul>
+                    </div>
+                    <a class="btn btn-ghost normal-case text-2xl lg:text-3xl">HMS</a>
+                </div>
+                <div class="navbar-center hidden lg:flex">
+                    <ul class="menu menu-horizontal px-1 text-xl">
+                        <li><a>Doctor Scheduling</a></li>
+                        <li><a>Appointment Bookings</a></li>
+                        <li><a>Billing & Invoice</a></li>
+                </div>
+                <div class="navbar-end">
+                    <input class="p-2 lg:p-3 rounded-lg" type="search" placeholder="Search here" name="" id="">
+                </div>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <!-- main welcome section -->
+        <section>
+            <div class="hero min-h-screen" style="background-image: url(images/hmscover.avif);">
+                <div class="hero-overlay bg-opacity-60"></div>
+                <div class="hero-content text-center text-neutral-content text-white">
+                    <div class="max-w-md">
+                        <h1 class="mb-5 text-6xl font-extrabold">Welcome <br>to<br>Our Hospital!</h1>
+                        <p class="mb-5 text-lg">Our mission is to deliver exceptional healthcare with compassion,
+                            expertise, and
+                            innovation. Your well-being and comfort are our top priorities, and we are dedicated to
+                            ensuring that you receive the highest quality medical attention and personalized care.</p>
+                        <button class="btn btn-primary">Get Started</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Doctor Scheduling -->
+        <section>
+            <div class="hero bg-base-200">
+                <div class="hero-content flex-col lg:flex-row py-10 lg:py-24 lg:gap-24">
+                    <img src="/images/Appointment bookings.png" class="lg:max-w-xl rounded-lg shadow-2xl " />
+                    <div class="text-white">
+                        <h1 class="text-5xl font-bold">Doctor Scheduling</h1>
+                        <p class="py-6 text-xl">To get the scheduling of your appointment, Enter the <span
+                                class="text-orange-400">Doctors Id</span> </p>
+                        <div>
+                            <input type="search" name="" id="" placeholder="Enter Doctor's ID"
+                                class="bg-gray-50 text-black font-bold border-green-300 p-4 rounded-lg text-lg">
+                            <button class="p-4 text-lg font-bold bg-green-500 rounded-lg lg:ml-4">Search</button>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+    <footer>
+
+    </footer>
+</body>
+
+</html>

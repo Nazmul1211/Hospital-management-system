@@ -35,19 +35,22 @@
                             </svg>
                         </label>
                         <ul tabindex="0"
-                            class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-slate-50 rounded-box w-52">
-                            <li><a>Doctor Scheduling</a></li>
-                            <li><a>Appointment Bookings</a></li>
-                            <li><a>Billing & Invoice</a></li>
+                            class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-slate-50 rounded-box w-52 lg:hidden">
+                            <li><a href="#section1">Doctor Details</a></li>
+                            <li><a href="#section2">Scheduling</a></li>
+                            <li><a href="#section3">Appointment</a></li>
+                            <li><a href="#section4">Patient Details</a></li>
+
                         </ul>
                     </div>
-                    <a class="btn btn-ghost normal-case text-2xl lg:text-3xl">HMS</a>
+                    <a href="http://127.0.0.1:5501/index.html" class="btn btn-ghost normal-case text-2xl lg:text-3xl">HMS</a>
                 </div>
                 <div class="navbar-center hidden lg:flex">
                     <ul class="menu menu-horizontal px-1 text-xl">
-                        <li><a>Doctor Scheduling</a></li>
-                        <li><a>Appointment Bookings</a></li>
-                        <li><a>Billing & Invoice</a></li>
+                        <li><a href="#section1">Doctor Details</a></li>
+                        <li><a href="#section2">Scheduling</a></li>
+                        <li><a href="#section3">Appointment</a></li>
+                        <li><a href="#section4">Patient Details</a></li>
                 </div>
                 <div class="navbar-end flex justify-end lg:pr-5">
                     <input class="p-2 lg:p-3 rounded-lg w-40 lg:w-1/2" type="search" placeholder="Search here" name=""
@@ -62,42 +65,58 @@
             <div class="hero min-h-screen" style="background-image: url(images/hmscover.avif);">
                 <div class="hero-overlay bg-opacity-60"></div>
                 <div class="hero-content text-center text-neutral-content text-white">
-                    <div class="max-w-md">
-                        <h1 class="mb-5 text-6xl font-extrabold">Welcome <br>to<br><span class="text-yellow-300">Our
-                                Hospital!</span></h1>
+                    <div class="max-w-lg space-y-8">
+                        <h1 class="mb-5 text-6xl font-extrabold">WELCOME <br>TO<br><span class="text-yellow-300">OUR
+                                HOSPITAL!</span></h1>
                         <p class="mb-5 text-lg">Our mission is to deliver exceptional healthcare with compassion,
                             expertise, and
                             innovation. Your well-being and comfort are our top priorities, and we are dedicated to
                             ensuring that you receive the highest quality medical attention and personalized care.</p>
-                        <button class="p-2 lg:p-4 text-lg font-bold bg-green-500 rounded-lg lg:ml-4">Get
-                            Started</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Doctor datails -->
+        <section id="section1">
+            <div class="hero bg-cyan-950 flex- justify-evenly">
+                <div class="hero-content flex-col lg:flex-row py-10 lg:py-24 lg:gap-24">
+                    <img src="images/Appointment bookings.png" class="lg:max-w-xl rounded-lg shadow-2xl " />
+                    <div class="text-white">
+                        <h1 class="text-5xl font-bold border-2 rounded-xl p-8 hover:text-sky-300"><a
+                                href="doctors.html">Doctor Details</a> </h1>
+                        <!-- <p class="py-6 text-xl">To get the scheduling of your appointment. </p> -->
+
                     </div>
                 </div>
             </div>
         </section>
 
         <!-- Doctor Scheduling -->
-        <section>
+        <section id="section2">
             <div class="hero bg-base-200">
-                <div class="hero-content flex-col lg:flex-row py-10 lg:py-24 lg:gap-24">
+                <div class="hero-content flex-col lg:flex-row-reverse py-10 lg:py-24 lg:gap-24">
                     <img src="images/Appointment bookings.png" class="lg:max-w-xl rounded-lg shadow-2xl " />
                     <div class="text-white">
                         <h1 class="text-5xl font-bold">Doctor Scheduling</h1>
                         <p class="py-6 text-xl">To get the scheduling of your appointment, Enter the <span
                                 class="text-orange-400">Doctors Id</span> </p>
                         <div class="flex w-full gap-2">
-                            <input type="search" name="" id="" placeholder="Enter Doctor's ID"
+                            <input type="search" name="" id="doctor_s" placeholder="Enter Doctor's ID"
                                 class="bg-gray-50 text-black lg:font-bold border-green-300 p-2 lg:p-4 rounded-lg text-lg w-full">
-                            <button class="p-2 lg:p-4 text-lg font-bold bg-green-500 rounded-lg lg:ml-4">Search</button>
+                            <button id="doctor_button"
+                                class="p-2 lg:p-4 text-lg font-bold bg-green-500 rounded-lg lg:ml-4">Search</button>
                         </div>
+
                     </div>
                 </div>
             </div>
         </section>
+
         <!-- Appointment Bookings -->
-        <section>
+        <section id="section3">
             <div class="hero bg-base-200">
-                <div class="hero-content flex-col lg:flex-row-reverse py-10 lg:py-24 lg:gap-24">
+                <div class="hero-content flex-col lg:flex-row py-10 lg:py-24 lg:gap-24">
                     <img src="images/hms5.webp" class="lg:max-w-xl rounded-lg shadow-2xl " />
                     <div class="text-white">
                         <h1 class="text-5xl font-bold">Appointment Bookings</h1>
@@ -105,45 +124,44 @@
                                 information</span> to place an appointment</p>
 
                         <div>
-                            <div class="form-control w-full max-w-xs mb-5">
-                                <label class="label">
-                                    <span class="label-text">What is your name?</span>
-                                </label>
-                                <input type="text" placeholder="Type here"
-                                    class="input input-bordered w-full text-lg max-w-xs" required>
-                            </div>
-                            <div class="form-control w-full max-w-xs mb-5">
-                                <label class="label">
-                                    <span class="label-text">Enter your Age?</span>
-                                </label>
-                                <input type="text" placeholder="Type here"
-                                    class="input input-bordered w-full text-lg max-w-xs" required>
-                            </div>
-                            <div class="form-control w-full max-w-xs mb-5">
-                                <label class="label">
-                                    <span class="label-text">Reason For Appointment</span>
-                                </label>
-                                <input type="text" placeholder="Type here"
-                                    class="input input-bordered w-full text-lg max-w-xs">
-                            </div>
-                            <div class="form-control w-full max-w-xs mb-5">
-                                <label class="label">
-                                    <span class="label-text">Enter Mobile Number</span>
-                                </label>
-                                <input type="text" placeholder="Type here"
-                                    class="input input-bordered w-full text-lg max-w-xs">
-                            </div>
-                            <div class="form-control w-full max-w-xs mb-5">
-                                <label class="label">
-                                    <span class="label-text">Enter the Doctor's ID</span>
-                                </label>
-                                <input type="text" placeholder="Doctor's ID"
-                                    class="input input-bordered w-full text-lg max-w-xs" required>
-                            </div>
-                            <div class="flex w-full gap-2">
-                                <input type="submit" value="submit"
-                                    class="text-white lg:font-bold bg-green-500 p-2 lg:p-4 rounded-lg text-lg">
-                            </div>
+                            <form action="http://localhost:8080/appointment" method="post">
+                                <div class="form-control w-full max-w-xs mb-5">
+                                    <label class="label">
+                                        <span class="label-text">What is your name?</span>
+                                    </label>
+                                    <input type="text" placeholder="Type here" name="name"
+                                        class="input input-bordered w-full text-lg max-w-xs text-black" required>
+                                </div>
+                                <div class="form-control w-full max-w-xs mb-5">
+                                    <label class="label">
+                                        <span class="label-text">Enter your Age?</span>
+                                    </label>
+                                    <input type="text" placeholder="Type here" name="gender"
+                                        class="input input-bordered w-full text-lg max-w-xs text-black" required>
+                                </div>
+                                <div class="form-control w-full max-w-xs mb-5">
+                                    <label class="label">
+                                        <span class="label-text">Enter Mobile Number</span>
+                                    </label>
+                                    <input type="text" placeholder="Type here" name="number"
+                                        class="input input-bordered w-full text-lg max-w-xs text-black">
+                                </div>
+                                <div class="form-control w-full max-w-xs mb-5">
+                                    <label class="label">
+                                        <span class="label-text">Enter the Doctor's ID</span>
+                                    </label>
+                                    <input type="text" placeholder="Doctor's ID" name="id"
+                                        class="input input-bordered w-full text-lg max-w-xs text-black" required>
+                                </div>
+                                <!-- <div>
+                                    <input class="text-white border-2 p-2 rounded-lg " type="submit" value="submit">
+                                </div> -->
+                                <div class="flex w-full gap-2">
+                                    <input class="hover:text-gray-300 text-white lg:font-bold bg-green-500 p-2 lg:p-4 rounded-lg text-lg"
+                                        type="submit" value="submit">
+                                </div>
+                            </form>
+
                         </div>
                     </div>
                 </div>
@@ -151,14 +169,14 @@
         </section>
 
         <!-- Billing and Invoice -->
-          <section>
+        <section id="section4">
             <div class="hero bg-pink-300">
-                <div class="hero-content flex-col lg:flex-row py-5 lg:py-24 lg:gap-24 border-orange-300">
-                    <img src="images/billing.jpg" class="lg:max-w-sm rounded-lg shadow-2xl "/>
+                <div class="hero-content flex-col lg:flex-row-reverse py-5 lg:py-24 lg:gap-24 border-orange-300">
+                    <img src="images/billing.jpg" class="lg:max-w-sm rounded-lg shadow-2xl " />
                     <div class="text-white">
                         <h1 class="text-5xl font-bold">Billing and Invoicing</h1>
-                        <p class="py-6 text-xl">Enter the <span
-                                class="text-purple-600 font-bold">Booking Id</span> to get the Invoice Details. </p>
+                        <p class="py-6 text-xl">Enter the <span class="text-purple-600 font-bold">Booking Id</span> to
+                            get the Invoice Details. </p>
                         <div class="flex w-full gap-2">
                             <input type="search" name="" id="" placeholder="Enter Booking ID"
                                 class="bg-gray-50 text-black lg:font-bold border-green-300 p-2 lg:p-4 rounded-lg text-lg w-full">
@@ -180,20 +198,20 @@
         </div>
         <div>
             <div class="grid grid-flow-col gap-4">
-                <a class="text-blue-600"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                        viewBox="0 0 24 24" class="fill-current">
+                <a class="text-blue-600" href="https://twitter.com/?lang=en"><svg xmlns="http://www.w3.org/2000/svg"
+                        width="24" height="24" viewBox="0 0 24 24" class="fill-current">
                         <path
                             d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z">
                         </path>
                     </svg></a>
-                <a class="text-red-600"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                        viewBox="0 0 24 24" class="fill-current">
+                <a class="text-red-600" href="https://www.youtube.com/"><svg xmlns="http://www.w3.org/2000/svg"
+                        width="24" height="24" viewBox="0 0 24 24" class="fill-current">
                         <path
                             d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 3.993-8 4.007z">
                         </path>
                     </svg></a>
-                <a class="text-blue-600"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                        viewBox="0 0 24 24" class="fill-current">
+                <a class="text-blue-600" href="https://www.facebook.com/"><svg xmlns="http://www.w3.org/2000/svg"
+                        width="24" height="24" viewBox="0 0 24 24" class="fill-current">
                         <path
                             d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z">
                         </path>
@@ -204,6 +222,9 @@
             <p>Copyright © 2023 - All right reserved by HMS</p>
         </div>
     </footer>
+    <script src="smooth-scrool.js"></script>
+    link
+    <link rel="" href="script.js">
 </body>
 
 </html>

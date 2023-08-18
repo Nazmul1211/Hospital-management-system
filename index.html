@@ -18,6 +18,24 @@
         .font-noto {
             font-family: 'Noto Sans', sans-serif;
         }
+
+        .form-container {
+            max-width: 800px;
+            margin: 0 auto;
+            overflow: hidden;
+        }
+
+        .form {
+            width: 100%;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            box-sizing: border-box;
+            display: none;
+        }
+        .active-form {
+            display: block;
+        }
     </style>
 </head>
 
@@ -43,7 +61,8 @@
 
                         </ul>
                     </div>
-                    <a href="http://127.0.0.1:5501/index.html" class="btn btn-ghost normal-case text-2xl lg:text-3xl">HMS</a>
+                    <a href="http://127.0.0.1:5501/index.html"
+                        class="btn btn-ghost normal-case text-2xl lg:text-3xl">HMS</a>
                 </div>
                 <div class="navbar-center hidden lg:flex">
                     <ul class="menu menu-horizontal px-1 text-xl">
@@ -81,11 +100,11 @@
         <section id="section1">
             <div class="hero bg-cyan-950 flex- justify-evenly">
                 <div class="hero-content flex-col lg:flex-row py-10 lg:py-24 lg:gap-24">
-                    <img src="images/Appointment bookings.png" class="lg:max-w-xl rounded-lg shadow-2xl " />
+                    <img src="images/doctor-details.png" class="lg:max-w-xl rounded-lg shadow-2xl " />
                     <div class="text-white">
                         <h1 class="text-5xl font-bold border-2 rounded-xl p-8 hover:text-sky-300"><a
                                 href="doctors.html">Doctor Details</a> </h1>
-                        <!-- <p class="py-6 text-xl">To get the scheduling of your appointment. </p> -->
+                        <p class="py-6 text-xl">We have a very experience Doctor's panel on different segment. To get the details of our all specialist visit the page. </p>
 
                     </div>
                 </div>
@@ -96,7 +115,7 @@
         <section id="section2">
             <div class="hero bg-base-200">
                 <div class="hero-content flex-col lg:flex-row-reverse py-10 lg:py-24 lg:gap-24">
-                    <img src="images/Appointment bookings.png" class="lg:max-w-xl rounded-lg shadow-2xl " />
+                    <img src="images/hms5.jpg" class="lg:max-w-xl rounded-lg shadow-2xl " />
                     <div class="text-white">
                         <h1 class="text-5xl font-bold">Doctor Scheduling</h1>
                         <p class="py-6 text-xl">To get the scheduling of your appointment, Enter the <span
@@ -117,13 +136,28 @@
         <section id="section3">
             <div class="hero bg-base-200">
                 <div class="hero-content flex-col lg:flex-row py-10 lg:py-24 lg:gap-24">
-                    <img src="images/hms5.webp" class="lg:max-w-xl rounded-lg shadow-2xl " />
-                    <div class="text-white">
-                        <h1 class="text-5xl font-bold">Appointment Bookings</h1>
-                        <p class="py-6 text-xl">Please enter the <span class="text-orange-400">required
-                                information</span> to place an appointment</p>
+                    <img src="images/appoinment-booking.png" class="lg:max-w-xl rounded-lg shadow-2xl " />
 
-                        <div>
+                    <!-- form container -->
+                    <div class="form-container">
+                        <h1 class="text-5xl font-bold text-white mb-10">Appointment Bookings</h1>
+
+                        <!-- btn container -->
+                        <div class="button-container space-x-4 mb-8">
+                            <button
+                                class="form-toggle text-white text-2xl font-bold px-4 py-2 bg-sky-400 hover:bg-orange-400 rounded-lg"
+                                data-form="form1">New Bookings</button>
+
+                            <button
+                                class="form-toggle  text-white text-2xl font-bold px-4 py-2 bg-sky-400 hover:bg-orange-400 rounded-lg"
+                                data-form="form2">Registered</button>
+                        </div>
+
+                        <!-- new appointment form -->
+                        <div class="form form1 active-form text-white">
+                            <h1 class="text-3xl font-bold text-purple-300">New Bookings</h1>
+                            <p class="py-6 text-xl">Please enter the <span class="text-orange-400">required
+                                    information</span> to place an appointment</p>
                             <form action="http://localhost:8080/appointment" method="post">
                                 <div class="form-control w-full max-w-xs mb-5">
                                     <label class="label">
@@ -161,31 +195,60 @@
                                         class="input input-bordered w-full text-lg max-w-xs text-black" required>
                                 </div>
                                 <!-- <div>
-                                    <input class="text-white border-2 p-2 rounded-lg " type="submit" value="submit">
-                                </div> -->
+                                        <input class="text-white border-2 p-2 rounded-lg " type="submit" value="submit">
+                                    </div> -->
                                 <div class="flex w-full gap-2">
-                                    <input class="hover:text-gray-300 text-white lg:font-bold bg-green-500 p-2 lg:p-4 rounded-lg text-lg"
-                                        type="submit" value="submit">
+                                    <button
+                                        class="hover:text-gray-300 text-white lg:font-bold bg-green-500 p-2 lg:p-4 rounded-lg text-lg"
+                                        type="submit">Submit</button>
                                 </div>
                             </form>
+                        </div>
 
+                        <!-- if previously appointed then the form is like -->
+                        <div class="text-white form form2">
+                            <h1 class="text-3xl font-bold text-purple-300">Registered Patient</h1>
+                            <p class="py-6 text-xl">If you are already a <span class="text-orange-400">registered
+                                    patient</span>, then please enter your <span class="text-orange-400">Patient ID &
+                                    Doctor ID</span>.</p>
+                            <form action="http://localhost:8080/appointment" method="post">
+                                <div class="form-control w-full max-w-xs mb-5">
+                                    <label class="label">
+                                        <span class="label-text">Enter Patient's ID</span>
+                                    </label>
+                                    <input type="text" placeholder="Type here" name="patient"
+                                        class="input input-bordered w-full text-lg max-w-xs text-black" required>
+                                </div>
+                                <div class="form-control w-full max-w-xs mb-5">
+                                    <label class="label">
+                                        <span class="label-text">Enter the Doctor's ID</span>
+                                    </label>
+                                    <input type="text" placeholder="Doctor's ID" name="id"
+                                        class="input input-bordered w-full text-lg max-w-xs text-black" required>
+                                </div>
+                                <div class="flex w-full gap-2">
+                                    <button
+                                        class="hover:text-gray-300 text-white lg:font-bold bg-green-500 p-2 lg:p-4 rounded-lg text-lg"
+                                        type="submit">Submit</button>
+                                </div>
+                            </form>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Billing and Invoice -->
+        <!-- Patient Details -->
         <section id="section4">
             <div class="hero bg-pink-300">
                 <div class="hero-content flex-col lg:flex-row-reverse py-5 lg:py-24 lg:gap-24 border-orange-300">
-                    <img src="images/billing.jpg" class="lg:max-w-sm rounded-lg shadow-2xl " />
+                    <img src="images/hms1.png" class="lg:max-w-xl rounded-lg shadow-2xl" />
                     <div class="text-white">
-                        <h1 class="text-5xl font-bold">Billing and Invoicing</h1>
-                        <p class="py-6 text-xl">Enter the <span class="text-purple-600 font-bold">Booking Id</span> to
-                            get the Invoice Details. </p>
+                        <h1 class="text-white text-5xl font-bold">Patient Details</h1>
+                        <p class="py-6 text-xl">Enter the <span class="text-purple-600 font-bold">Patient's ID</span> to
+                            get the Patient Information. </p>
                         <div class="flex w-full gap-2">
-                            <input type="search" name="" id="" placeholder="Enter Booking ID"
+                            <input type="search" name="" id="" placeholder="Enter Patient's ID"
                                 class="bg-gray-50 text-black lg:font-bold border-green-300 p-2 lg:p-4 rounded-lg text-lg w-full">
                             <button class="p-2 lg:p-4 text-lg font-bold bg-green-500 rounded-lg lg:ml-4">Search</button>
                         </div>
@@ -229,9 +292,22 @@
             <p>Copyright © 2023 - All right reserved by HMS</p>
         </div>
     </footer>
+
     <script src="smooth-scrool.js"></script>
     link
     <link rel="" href="script.js">
+    <script>
+        const buttons = document.querySelectorAll('.form-toggle');
+        const forms = document.querySelectorAll('.form');
+
+        buttons.forEach(button => {
+            button.addEventListener('click', () => {
+                const targetForm = button.getAttribute('data-form');
+                forms.forEach(form => form.classList.remove('active-form'));
+                document.querySelector(`.${targetForm}`).classList.add('active-form');
+            });
+        });
+    </script>
 </body>
 
 </html>

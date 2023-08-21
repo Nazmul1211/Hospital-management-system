@@ -113,22 +113,28 @@
             </div>
         </section>
 
+        <section>
+            <div class="scheduleData">
+
+            </div>
+        </section>
         <!-- Doctor Scheduling -->
         <section id="section2">
-            <div class="hero bg-base-200">
+            <div class="hero bg-emerald-950">
                 <div class="hero-content flex-col lg:flex-row-reverse py-10 lg:py-24 lg:gap-24">
                     <img src="images/hms5.jpg" class="lg:max-w-xl rounded-lg shadow-2xl " />
                     <div class="text-white">
                         <h1 class="text-5xl font-bold">Doctor Scheduling</h1>
                         <p class="py-6 text-xl">To get the scheduling of your appointment, Enter the <span
                                 class="text-orange-400">Doctors Id</span> </p>
-                        <div class="flex w-full gap-2">
-                            <input type="search" name="" id="doctor_s" placeholder="Enter Doctor's ID"
-                                class="bg-gray-50 text-black lg:font-bold border-green-300 p-2 lg:p-4 rounded-lg text-lg w-full">
-                            <button id="doctor_button"
-                                class="p-2 lg:p-4 text-lg font-bold bg-green-500 rounded-lg lg:ml-4">Search</button>
-                        </div>
-
+                        <form action="http://localhost:8080/schedule" method="post">
+                            <div class="flex w-full gap-2">
+                                <input type="search" name="schedule_id" id="doctor_s" placeholder="Enter Doctor's ID"
+                                    class="bg-gray-50 text-black lg:font-bold border-green-300 p-2 lg:p-4 rounded-lg text-lg w-full">
+                                <button id="schedule-data"
+                                    class="p-2 lg:p-4 text-lg font-bold bg-green-500 rounded-lg lg:ml-4">Search</button>
+                            </div>
+                        </form>
                     </div>
                 </div>
             </div>
@@ -136,7 +142,7 @@
 
         <!-- Appointment Bookings -->
         <section id="section3">
-            <div class="hero bg-base-200">
+            <div class="hero bg-cyan-950">
                 <div class="hero-content flex-col lg:flex-row py-10 lg:py-24 lg:gap-32">
                     <img src="images/appoinment-booking.png" class="lg:max-w-full rounded-lg shadow-2xl " />
 
@@ -160,45 +166,42 @@
                             <h1 class="text-3xl font-bold text-purple-300">New Bookings</h1>
                             <p class="py-6 text-xl">Please enter the <span class="text-orange-400">required
                                     information</span> to place an appointment</p>
-                            <form action="http://localhost:8080/appointment" method="post">
-                                <div class="form-control w-full max-w-xs mb-5">
+                            <form action="http://localhost:8080/appointment_new" method="post">
+                                <div class="form-control w-full max-w-xs mb-5 ">
                                     <label class="label">
-                                        <span class="label-text">What is your name?</span>
+                                        <span class="label-text text-white">What is your name?</span>
                                     </label>
                                     <input type="text" placeholder="Type here" name="name"
                                         class="input input-bordered w-full text-lg max-w-xs text-white" required>
                                 </div>
                                 <div class="form-control w-full max-w-xs mb-5">
                                     <label class="label">
-                                        <span class="label-text">Enter your Gender</span>
+                                        <span class="label-text text-white">Enter your Gender</span>
                                     </label>
                                     <input type="text" placeholder="Type here" name="gender"
                                         class="input input-bordered w-full text-lg max-w-xs text-white" required>
                                 </div>
                                 <div class="form-control w-full max-w-xs mb-5">
                                     <label class="label">
-                                        <span class="label-text">Enter Your Address</span>
+                                        <span class="label-text text-white">Enter Your Address</span>
                                     </label>
                                     <input type="text" placeholder="Type here" name="address"
                                         class="input input-bordered w-full text-lg max-w-xs text-white">
                                 </div>
                                 <div class="form-control w-full max-w-xs mb-5">
                                     <label class="label">
-                                        <span class="label-text">Enter Mobile Number</span>
+                                        <span class="label-text text-white">Enter Mobile Number</span>
                                     </label>
                                     <input type="text" placeholder="Type here" name="number"
                                         class="input input-bordered w-full text-lg max-w-xs text-white">
                                 </div>
                                 <div class="form-control w-full max-w-xs mb-5">
                                     <label class="label">
-                                        <span class="label-text">Enter the Doctor's ID</span>
+                                        <span class="label-text text-white">Enter the Doctor's ID</span>
                                     </label>
                                     <input type="text" placeholder="Doctor's ID" name="id"
                                         class="input input-bordered w-full text-lg max-w-xs text-white" required>
                                 </div>
-                                <!-- <div>
-                                        <input class="text-white border-2 p-2 rounded-lg " type="submit" value="submit">
-                                    </div> -->
                                 <div class="flex w-full gap-2">
                                     <button
                                         class="hover:text-gray-300 text-white lg:font-bold bg-green-500 p-2 lg:p-4 rounded-lg text-lg"
@@ -213,20 +216,20 @@
                             <p class="py-6 text-xl">If you are already a <span class="text-orange-400">registered
                                     patient</span>, then please enter your <span class="text-orange-400">Patient ID &
                                     Doctor ID</span>.</p>
-                            <form action="http://localhost:8080/appointment" method="post">
+                            <form action="http://localhost:8080/appointment_old" method="post">
                                 <div class="form-control w-full max-w-xs mb-5">
                                     <label class="label">
-                                        <span class="label-text">Enter Patient's ID</span>
+                                        <span class="label-text text-white">Enter Patient's ID</span>
                                     </label>
                                     <input type="text" placeholder="Type here" name="patient"
-                                        class="input input-bordered w-full text-lg max-w-xs text-black" required>
+                                        class="input input-bordered w-full text-lg max-w-xs text-white" required>
                                 </div>
                                 <div class="form-control w-full max-w-xs mb-5">
                                     <label class="label">
-                                        <span class="label-text">Enter the Doctor's ID</span>
+                                        <span class="label-text text-white">Enter the Doctor's ID</span>
                                     </label>
                                     <input type="text" placeholder="Doctor's ID" name="id"
-                                        class="input input-bordered w-full text-lg max-w-xs text-black" required>
+                                        class="input input-bordered w-full text-lg max-w-xs text-white" required>
                                 </div>
                                 <div class="flex w-full gap-2">
                                     <button
@@ -244,21 +247,35 @@
         <section id="section4">
             <div class="hero bg-pink-300">
                 <div class="hero-content flex-col lg:flex-row-reverse py-5 lg:py-24 lg:gap-32 border-orange-300">
-                    <img src="images/hms1.png" class="lg:max-w-xl rounded-lg shadow-2xl" />
+                    <img src="images/hms1.png" - class="lg:max-w-xl rounded-lg shadow-2xl" />
                     <div class="text-white">
                         <h1 class="text-white text-5xl font-bold">Patient Details</h1>
                         <p class="py-6 text-xl">Enter the <span class="text-purple-600 font-bold">Patient's ID</span> to
                             get the Patient Information. </p>
-                        <div class="flex w-full gap-2">
-                            <input type="search" name="" id="" placeholder="Enter Patient's ID"
-                                class="bg-gray-50 text-black lg:font-bold border-green-300 p-2 lg:p-4 rounded-lg text-lg w-full">
-                            <button
-                                class="hover:text-gray-300 p-2 lg:p-4 text-lg font-bold bg-green-500 rounded-lg lg:ml-4">Search</button>
-                        </div>
+                        <form id="patient-form" action="http://localhost:8080/patient_records" method="post">
+                            <div class="flex w-full gap-2">
+                                <input type="search" name="patient" id="patient-id" placeholder="Enter Patient's ID"
+                                    class="bg-gray-50 text-black lg:font-bold border-green-300 p-2 lg:p-4 rounded-lg text-lg w-full">
+                                <button id="patient-data" type="search"
+                                    class="p-2 lg:p-4 text-lg font-bold bg-green-500 rounded-lg lg:ml-4">Search</button>
+                            </div>
+                        </form>
                     </div>
                 </div>
             </div>
         </section>
+        <div id="patient-details" style="display:none;">
+            <h2>Patient Details</h2>
+            <p><strong>Name:</strong> <span id="patient-name"></span></p>
+            <p><strong>Age:</strong> <span id="patient-age"></span></p>
+            <p><strong>Gender:</strong> <span id="patient-gender"></span></p>
+            <h3>Appointments</h3>
+            <ul id="appointment-list"></ul>
+        </div>
+        
+        <div id="ppatientData" style="display:none;">
+            <!-- Data will be displayed here -->
+        </div>
     </main>
 
     <!-- footer section -->
@@ -295,11 +312,11 @@
             <p>Copyright © 2023 - All right reserved by HMS</p>
         </div>
     </footer>
-
+    <script src="front_end.js"></script>
     <script src="smooth-scrool.js"></script>
-    link
     <link rel="" href="script.js">
     <script>
+         // this part is for the toogling section of the apointment
         const buttons = document.querySelectorAll('.form-toggle');
         const forms = document.querySelectorAll('.form');
 

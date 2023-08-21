@@ -1,5 +1,6 @@
 var mysql = require("mysql");
 
+// here con means connection. It's just short form
 var con = mysql.createConnection({
     host:"localhost",
     user:"root",
@@ -11,6 +12,6 @@ mysql.createConnection((err)=>{
     if(!err)
     console.log('Connections Established Successfully');
      else
-     console.log('Connectoins Failed!')
+     console.log('Connections Failed!');
 });
 module.exports = con;

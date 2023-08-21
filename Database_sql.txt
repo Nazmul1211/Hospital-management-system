@@ -1,0 +1,53 @@
+create Table Doctor_Details(
+ Doctor_id int primary key ,
+ Name varchar(30) not null,
+ specialization varchar(30) not null,
+ phone_number bigint 
+)
+
+
+
+Create Table Schedule(
+ Doctors_id int ,
+ Schedule_Date varchar(20),
+ Start_time varchar(10),
+ Availbility boolean,
+ foreign key(Doctors_id) references Doctor_Details(Doctor_id),
+ Primary key(Doctors_id,Availbility)
+)
+
+
+
+ Create Table Appointment(
+ Booking_id int primary key,
+ Patient_id int,
+ Doctor_id int,
+ Booking_status bool,
+ foreign key(Patient_id) references Patient(Patient_id),
+foreign key(Doctor_id) references Doctor_Details(Doctor_id),
+);
+
+
+create Table Patient(
+ Patient_id int primary key ,
+ Name varchar(30) not null,
+ gender varchar(30) not null,
+ address varchar(50) ,
+ phone_number bigint 
+)
+
+
+
+insert into Doctor_details
+values(01,'Zahed','Medicine',1284728291),
+(02,'Rezaul','Medicine',2384784291),
+(03,'Safwan','Gynee & OBS',2345543441),
+(04,'Farhad','Cardiology',9083728291),
+(05,'Tanzina','Surgery',1284728291),
+(06,'Dhrubo','Urology',5644728291),
+(07,'Nahar','Orthopedics',3242728291);
+
+
+
+
+

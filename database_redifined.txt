@@ -1,0 +1,31 @@
+create Table Doctor_Details(
+ Doctor_id int primary key ,
+ Name varchar(30) not null,
+ specialization varchar(30) not null,  
+ phone_number bigint 
+ available statue bool 
+)
+
+Create Table Schedule(
+ Doctors_id int ,
+ Schedule_Date date,
+ Start_time varchar(10),
+ foreign key(Doctors_id) references Doctor_Details(Doctor_id),
+ Primary key(Doctors_id,Availbility)
+)
+
+ Create Table Appointment(
+ Booking_id int primary key,
+ Patient_id int,
+ Doctor_id int,
+ foreign key(Patient_id) references Patient(Patient_id),
+foreign key(Doctor_id) references Doctor_Details(Doctor_id),
+);
+
+create Table Patient(
+ Patient_id int primary key ,
+ Name varchar(30) not null,
+ gender varchar(30) not null,
+ address varchar(50) ,
+ phone_number bigint 
+)
